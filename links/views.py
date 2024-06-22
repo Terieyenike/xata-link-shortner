@@ -21,8 +21,9 @@ def index(request):
         ],
         "sort": {"name": "desc"}
     })
+    links = links.get('records', [])
     context = {
-        "links": links['records']
+        "links": links
     }
     return render(request, 'links/index.html', context)
 
