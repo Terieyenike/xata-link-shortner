@@ -41,7 +41,7 @@ def add_link(request):
             form.save()
             return redirect(reverse("home"))
     else:
-        form = LinkForm
+        form = LinkForm()
     context = {
         "form": form
     }
