@@ -1,0 +1,28 @@
+{% extends "links/base.html" %}
+{% block content %}
+<div class="w-full md:w-5/6 lg:w-2/3 mx-auto px-4 md:px-8 lg:px-10">
+  <h1 class="text-2xl sm:text-4xl mb-4">Links</h1>
+  {% if links %}
+    {% for link in links %}
+      <div class="border rounded px-4 md:px-10 lg:px-12 py-6 md:py-8 my-4 md:my-6 hover:bg-gray-50">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center pb-4 md:pb-6">
+          <p class="text-xl md:text-2xl">{{link.name}}</p>
+          <p class="rounded-full bg-green-200 px-4 md:px-6 py-2 mt-2 md:mt-0">Clicks: {{link.clicks}}</p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+          <p class="mb-2 md:mb-0">
+            <a class="underline text-blue-700" href="{{link.url}}">{{link.url}}</a>
+          </p>
+          <p class="underline text-blue-700">
+            <a target="_blank" href="{% url 'root-link' link.slug %}">
+              Open /{{link.slug}} →
+            </a>
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No links stored in the database.</p>
+  {% endif %}
+</div>
+{% endblock content %}

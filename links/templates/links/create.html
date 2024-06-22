@@ -1,0 +1,16 @@
+{% extends "links/base.html" %}
+{% load tailwind_filters %}
+{% block content %}
+<div class="flex justify-center items-center p-4">
+  <div class="w-full max-w-xl bg-white p-6 rounded-lg shadow-md">
+    <form method="POST" class="space-y-4">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <input
+        class="self-center rounded px-5 py-2 bg-green-500 text-white hover:bg-green-600 hover:cursor-pointer"
+        type="submit"
+        value="Create" />
+    </form>
+  </div>
+</div>
+{% endblock content %}

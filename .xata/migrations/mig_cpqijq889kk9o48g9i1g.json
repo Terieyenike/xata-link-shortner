@@ -1,0 +1,29 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cpqijq889kk9o48g9i1g",
+    "operations": [
+      {
+        "add_column": {
+          "table": "links",
+          "column": {
+            "pk": false,
+            "name": "slug",
+            "type": "text",
+            "check": {
+              "name": "links_xata_string_length_slug",
+              "constraint": "LENGTH(\"slug\") <= 2048"
+            },
+            "unique": true,
+            "comment": "{\"xata.type\":\"string\"}",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cpqijq889kk9o48g9i1g",
+  "parent": "mig_cpqijj089kk9o48g9i0g",
+  "startedAt": "2024-06-21T07:21:14.45689Z"
+}

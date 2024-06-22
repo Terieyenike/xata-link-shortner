@@ -1,0 +1,25 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cpqik0vd9rvd1vn3lki0",
+    "operations": [
+      {
+        "add_column": {
+          "table": "links",
+          "column": {
+            "pk": false,
+            "name": "clicks",
+            "type": "bigint",
+            "unique": false,
+            "default": "'0'",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cpqik0vd9rvd1vn3lki0",
+  "parent": "mig_cpqijq889kk9o48g9i1g",
+  "startedAt": "2024-06-21T07:21:39.63265Z"
+}
