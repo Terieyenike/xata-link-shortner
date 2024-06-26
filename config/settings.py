@@ -33,7 +33,11 @@ SECRET_KEY = 'django-insecure-anyctl^cv=u5oma9s59+@gd8z+wm+^zfl!0!!!1q$g71jl!cro
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'www.xata-link-shortner.onrender.com']
+ALLOWED_HOSTS = [
+    'https://xata-link-shortner.onrender.com',
+    '127.0.0.1',
+    'localhost',
+]
 
 # Application definition
 
