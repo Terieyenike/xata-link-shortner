@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # import psycopg2 as Database
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,9 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-anyctl^cv=u5oma9s59+@gd8z+wm+^zfl!0!!!1q$g71jl!cro'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://xata-link-shortner.onrender.com/']
 
 # Application definition
 
@@ -89,11 +94,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'link_shortner:main',
-        'USER': '14frfm',
-        'PASSWORD': 'xau_eQJC6b2tBLwH4AxSYxgsSIggoH44Vjus1',
-        'HOST': 'eu-west-1.sql.xata.sh',
-        'PORT': '5432',
+        'NAME': os.environ.get('DATABASE_NAME_BRANCH'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PWD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 
