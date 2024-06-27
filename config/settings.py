@@ -12,13 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
-import os
-
-from django.contrib import staticfiles
-from dotenv import load_dotenv
-
-load_dotenv()
-
 # import psycopg2 as Database
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,11 +26,7 @@ SECRET_KEY = 'django-insecure-anyctl^cv=u5oma9s59+@gd8z+wm+^zfl!0!!!1q$g71jl!cro
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    'xata-link-shortner.onrender.com',
-    '127.0.0.1',
-    'localhost',
-]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -100,11 +89,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DATABASE_NAME_BRANCH'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PWD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': 'link_shortner:main',
+        'USER': '14frfm',
+        'PASSWORD': 'xau_eQJC6b2tBLwH4AxSYxgsSIggoH44Vjus1',
+        'HOST': 'eu-west-1.sql.xata.sh',
+        'PORT': '5432',
     }
 }
 
@@ -142,8 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
